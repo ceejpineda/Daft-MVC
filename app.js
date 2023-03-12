@@ -13,8 +13,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('assets'));
-
-routes(app);
+app.use('/', routes);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
