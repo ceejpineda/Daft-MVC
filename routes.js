@@ -1,9 +1,13 @@
-const Express = require("express");
-const Router = Express.Router();
-const UserController = require('./controllers/users');
-const userController = new UserController();
+const express = require("express");
+const router = express.Router();
+const CarsController = require('./controllers/Cars');
+const Cars = new CarsController();
 
-Router.get("/", userController.index);
-Router.post("/result", userController.result);
 
-module.exports = Router;
+/*START OF ROUTING:
+Documentation: Use router.HTTP_REQUEST("URL", "CONTROLLER METHOD").
+HTTP REQUEST: get, post.
+*/
+router.get("/", Cars.index);
+
+module.exports = router;
