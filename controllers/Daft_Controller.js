@@ -6,4 +6,4 @@ class Daft_Controller{
 
 }
 
-module.exports = Daft_Controller
+module.exports = Daft_Controller;
