@@ -1,5 +1,5 @@
 const Student = require('../models/Student.js');
-const Daft_Controller = require('./Daft_Controller')
+const Daft_Controller = require('../../core/Daft_Controller')
 
 class Students extends Daft_Controller{
     
@@ -7,12 +7,14 @@ class Students extends Daft_Controller{
         super();
     };
   
-    index(req, res){
-        if(req.session.first_name){
-            res.render('profile', req.session);
-        }else{
-            res.render('index');
-        }
+    async index(req, res){
+        await Daft_Controller.profiler(req, res, () => {
+            if (req.session.first_name) {
+              res.render('profile', req.session);
+            } else {
+              res.render('index');
+            }
+        });
     };
 
     async register(req, res) {
@@ -21,6 +23,7 @@ class Students extends Daft_Controller{
     };
 
     async login(req, res){
+        Daft_Controller.profiler(req,res)
         let user = await Student.get_user_by_email(req.body.loginEmail);
         let result = await Student.validate_signin_match(user, req.body.loginPassword);
 

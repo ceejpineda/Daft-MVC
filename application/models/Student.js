@@ -1,4 +1,4 @@
-const Daft_Model = require('./Daft_Model');
+const Daft_Model = require('../../core/Daft_Model');
 
 class Student extends Daft_Model{
 

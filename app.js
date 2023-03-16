@@ -1,13 +1,17 @@
-/*SET THE PORT NUMBER USING THIS CONST VARIABLE*/
-
 const express = require('express');
 const bodyParser = require('body-parser')
-const router = require('./routes.js');
+const router = require('./application/configuration/routes.js');
 const app = express();
 const session = require('express-session');
-const config = require('./config')
+const config = require('./application/configuration/config');
+const path = require('path');
+//const form_validator = require("./core/form_validator");
+const profiler = require('./core/profiler');
+
 
 //Middlewares
+//app.use(profiler);
+app.set('views', path.join(__dirname, 'application/views'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

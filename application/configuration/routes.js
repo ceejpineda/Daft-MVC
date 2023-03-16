@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 /*START OF CONTROLLER SETUP:*/
-const Students = require('./controllers/Students.js');
+const Students = require('../controllers/Students.js');
 
 
 /*START OF ROUTING:*/

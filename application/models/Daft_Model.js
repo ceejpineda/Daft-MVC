@@ -1,4 +1,4 @@
-const database = require('../database')
+const database = require('../configuration/database')
 
 class Daft_Model {
 
@@ -11,7 +11,6 @@ class Daft_Model {
     }
 
     async query (sql, values = []){
-        //FIRST VERSION (ASK WHICH IS BETTER)
         return new Promise((resolve, reject) => {
             this.connection.query(sql, values, (err, rows, fields) => {
                 if (err) {
@@ -20,23 +19,7 @@ class Daft_Model {
                 return resolve(rows);
             });
         });
-
-        //SECOND VERSION (ASK WHICH IS BETTER)
-        // try {
-        //     this.result = await this.connection.promise().query(sql, values);
-        //     return this;
-        // } catch (error) {
-        //     throw error;
-        // }
     }
-
-    // async result_array(){
-    //     return this.result[0];
-    // }
-
-    // async row_array(){
-    //     return this.result[0][0];
-    // }
 
 }
   
