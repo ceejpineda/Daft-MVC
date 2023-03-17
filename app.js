@@ -6,18 +6,16 @@ const session = require('express-session');
 const config = require('./application/configuration/config');
 const path = require('path');
 //const form_validator = require("./core/form_validator");
-const profiler = require('./core/profiler');
 
 
 //Middlewares
-//app.use(profiler);
 app.set('views', path.join(__dirname, 'application/views'));
-app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('assets'));
 app.use(session(config.session))
-app.use('/', router);
+app.use(router);
+app.set('view engine', 'ejs');
 
 app.listen(config.port, () => {
     console.log(`App is listening at http://localhost:${config.port}`);
