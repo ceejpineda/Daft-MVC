@@ -1,0 +1,9 @@
+<% for(let player of players) { %>
+    <div class="card col-sm-3">
+        <img src="<%= player['image'] %>" class="card-img-top" alt="">
+        <div class="card-body">
+            <h5 class="card-title"><%= player['name'] %></h5>
+            <p><%= player['sport'] %></p>
+        </div>
+    </div> 
+<% } %>

@@ -6,7 +6,7 @@ const config = {
         host: 'localhost',
         user: 'root',
         password: 'zqaxsw123',
-        database: 'users_mvc'
+        database: 'sports'
     },
 
     session:{

@@ -1,3 +1,11 @@
+/*
+    WARNING! Changing or Modifying this file might make the app
+    not work as expected. 
+    
+    If you need to modify please use the config.js file in
+    /application/configuration directory.
+*/
+
 const express = require('express');
 const bodyParser = require('body-parser')
 const router = require('./application/configuration/routes.js');
@@ -5,7 +13,6 @@ const app = express();
 const session = require('express-session');
 const config = require('./application/configuration/config');
 const path = require('path');
-//const form_validator = require("./core/form_validator");
 
 
 //Middlewares

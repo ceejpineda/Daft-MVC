@@ -1,3 +1,23 @@
+/* DOCUMENTATION:
+        How to use:
+            In your controller method you want to profile, you can wrap the 
+            controler method functions and the profiler will show all the necessary
+            data that occured in the controller method.
+            
+            You can also use it as a middleware to be put on your Router if you 
+            want to enable it globally.
+
+        Example: index(req, res){
+                    profiler(req, res, ()=>{
+                        res.render(index);
+                    })
+                };
+        This will run the profiler in the index method of the controller.
+
+        Data shown: URI, HTTP Request, Memory Usage, POST/GET Data, Session Data
+                    SQL Queries, Time Elapsed.
+*/
+
 const Daft_Model = require("../Daft_Model");
 
 async function profiler(req, res, next) {
@@ -14,7 +34,12 @@ async function profiler(req, res, next) {
     };
     console.log(profile);
     appendToBody(res, profile);
-    next();
+
+    if(false){
+        next();
+    }else{
+        res.redirect('/');
+    }
 }
 
 function appendToBody(res, data) {

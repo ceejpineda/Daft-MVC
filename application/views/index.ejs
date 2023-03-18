@@ -6,64 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Authentication</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href=/stylesheets/style.css?>">
+    <script>
+        $(document).ready(function(){
+            $(document).on('submit', 'form', function(){
+                var form = $(this);
+                $.post(form.attr('action'),form.serialize(), function(data) {
+                    console.log(data);
+                    $('#main').html(data);
+                });
+                return false;
+            });
+        })
+    </script>
+    <title>The Athlete's Database</title>
 </head>
-<body>
-    <div class="container-fluid">
-        <h1 class="mx-auto my-3">Register/Login</h1>
-        <div class="row">
-            <div class="col-sm">
-                <h2 class="mx-auto my-3">Register</h2>
-                <form id="register" class="form" method="POST" action="/register">
-                    <input type="hidden" name="action" value="register">
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
-                        <label for="email">Email address</label>
-                    </div>
-                    <div class="row">
-                        <div class="form-floating mb-3 col-sm-6">
-                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder=" ">
-                            <label for="firstName">First Name</label>
+    <body>
+        <h1 class="text-light">Player Database</h1>
+        <div class="container flex justify-content-center align-items-center">
+            <div class="row">
+                <div class="container main col-sm-3 text-start">
+                    <p>Search Users:</p>
+                    <form action="/search" method="POST">
+                        <label class="form-label" for="name">Name of player</label>
+                        <input class="form-control mb-3" type="text" name="name" id="name">
+                        <label class="form-label" for="gender">Gender</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="gender[]" id="female" value="female">
+                            <label class="form-check-label" for="female">Female</label>
                         </div>
-                        <div class="form-floating mb-3 col">
-                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder=" ">
-                            <label for="lastName">Last-Name</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="gender[]" id="male" value="male">
+                            <label class="form-check-label" for="male">Male</label>
                         </div>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="number" class="form-control" name="contact" id="contact" placeholder=" ">
-                        <label for="contact">Contact Number</label>
-                    </div>
-                    <div class="row">
-                        <div class="form-floating mb-3 col">
-                            <input type="password" class="form-control" name="password" id="password" placeholder=" ">
-                            <label for="password">Password</label>
+                        <label class="form-label mt-3" for="name">Sport</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="sport[]" id="basketball" value="basketball">
+                            <label class="form-check-label" for="male">Basketball</label>
                         </div>
-                        <div class="form-floating mb-3 col">
-                            <input type="password" class="form-control" name="cPassword" id="cPassword" placeholder=" ">
-                            <label for="cPassword">Confirm Password</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="sport[]" id="volleyball" value="volleyball">
+                            <label class="form-check-label" for="male">Volleyball</label>
                         </div>
-                    </div>
-                    <input class="btn btn-primary" type="submit" value="Register">
-                </form>
-            </div>
-            <div class="col-sm">
-                <h2 class="mx-auto my-3">Login</h2>
-                <form id="login" class="form" method="POST" action="/students/profile">
-                    <input type="hidden" name="action" value="login">
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" name="loginEmail" id="loginEmail" placeholder=" ">
-                        <label for="loginEmail">Email address</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control" name="loginPassword" id="loginPassword" placeholder=" ">
-                        <label for="loginPassword">Password</label>
-                    </div>
-                    <input class="btn btn-primary" type="submit" value="Login" form="login">
-                </form>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="sport[]" id="baseball" value="baseball">
+                            <label class="form-check-label" for="male">Baseball</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="sport[]" id="tennis" value="tennis">
+                            <label class="form-check-label" for="male">Tennis</label>
+                        </div>
+                        <input type="submit" value="Search" class="btn btn-primary mt-4">
+                    </form>
+                </div>
+                <div class="container main col-sm-9 text-start player-container">    
+                    <h1>Players searched:</h1>
+                    <div class="container flex row" id="main">
+
+                    </div>     
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

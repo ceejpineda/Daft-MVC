@@ -1,15 +1,49 @@
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
 body{
-    text-align: center;
-    width: 100vw;
     height: 100vh;
+    width: 100vw;
+    padding: 5%;
+    background-color: #121212;
+    text-align: center;
 }
-
+.main{
+    background-color: #F2f2f2;
+    height: 700px;
+    padding: 25px;
+    border: 10px solid rgb(108, 108, 108);
+    box-shadow: 6px 6px gray;
+    border-radius: 15px;
+}
+.folder{
+    margin: auto;
+    width: 120px;
+}
+.delete{
+    padding: 0;
+    height: 25px;
+    margin-bottom: 10px;
+}
+.options, form{
+    display: inline-block;
+}
+.options{
+    margin: 20px;
+}
 p{
-    font-size: 24px;
+    font-size: 18px;
+    vertical-align: middle;
+}
+.card{
+    text-align: center;
+}
+.player-container{
+    overflow-y: scroll;
+}
+img{
+    object-fit: contain;
+    height: 150px;
 }
