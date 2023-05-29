@@ -48,8 +48,8 @@ Contributions are welcome! If you find any bugs, have suggestions for improvemen
 
 ## Acknowledgments
 
-Express - Fast, unopinionated, minimalist web framework for Node.js.
-Node.js - A JavaScript runtime built on Chrome's V8 JavaScript engine.
+- Express - Fast, unopinionated, minimalist web framework for Node.js.
+- Node.js - A JavaScript runtime built on Chrome's V8 JavaScript engine.
 
 ## Contact
 
