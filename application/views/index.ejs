@@ -12,12 +12,22 @@
         $(document).ready(function(){
             $(document).on('submit', 'form', function(){
                 var form = $(this);
-                $.post(form.attr('action'),form.serialize(), function(data) {
+                $.post(form.attr('action'), form.serialize(), function(data) {
                     console.log(data);
                     $('#main').html(data);
                 });
                 return false;
             });
+
+            $('#searchForm').on('change', function(){
+                console.log('hello')
+                $('#searchForm').submit();
+            })
+
+            $('#name').on('keyup', function(){
+                console.log('hello')
+                $('#searchForm').submit();
+            })
         })
     </script>
     <title>The Athlete's Database</title>
@@ -28,7 +38,7 @@
             <div class="row">
                 <div class="container main col-sm-3 text-start">
                     <p>Search Users:</p>
-                    <form action="/search" method="POST">
+                    <form action="/search" method="POST" id="searchForm">
                         <label class="form-label" for="name">Name of player</label>
                         <input class="form-control mb-3" type="text" name="name" id="name">
                         <label class="form-label" for="gender">Gender</label>

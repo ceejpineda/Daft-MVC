@@ -14,7 +14,6 @@ const session = require('express-session');
 const config = require('./application/configuration/config');
 const path = require('path');
 
-
 //Middlewares
 app.set('views', path.join(__dirname, 'application/views'));
 app.use(bodyParser.json());

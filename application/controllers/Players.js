@@ -10,20 +10,12 @@ class Players extends Daft_Controller{
     };
   
     index(req, res){
-        // res.on('finish', ()=>{
-        //     profiler(res, req);
-        //     console.log('finished')
-        // })
-        profiler(req, res, ()=>{
-            res.render('index');
-        })
+        res.render('index');
     };
 
     async search(req, res){
-        profiler(req, res, async()=>{
-            let players = await Player.match_players(req.body)
-            res.render('partials/player_partial', {players})
-        })
+        let players = await Player.match_players(req.body)
+        res.render('partials/player_partial', {players})
     }
     
 }

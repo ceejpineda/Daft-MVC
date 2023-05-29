@@ -5,7 +5,7 @@ const config = {
     database:{
         host: 'localhost',
         user: 'root',
-        password: 'zqaxsw123',
+        password: '',
         database: 'sports'
     },
 
