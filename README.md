@@ -36,5 +36,6 @@ Follow these steps to get started with Daft:
 6. **Views**: Create your views using your templating engine EJS in the `views` directory. Render dynamic content and generate HTML responses.
 
 7. **Start the Server**: Run the following command to start the server.
-```shell
-$ npm start
+
+    ```shell
+    $ npm start
