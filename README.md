@@ -12,3 +12,16 @@ Daft is a lightweight MVC (Model-View-Controller) framework for small projects b
 - **Middleware**: Daft leverages Express middleware to handle common tasks such as authentication, logging, error handling, and more.
 - **Configuration**: Configure your application settings, database connections, and other environment-specific variables in a dedicated configuration file.
 - **Easy to Use**: Daft aims to be beginner-friendly, with a simple and intuitive API that allows you to get started quickly and efficiently.
+
+
+## Getting Started
+
+Follow these steps to get started with Daft:
+
+1. **Installation**: Clone the Daft repository or use npm to install it as a dependency.
+
+   ```shell
+   $ git clone https://github.com/yourusername/daft.git
+   $ cd daft
+   $ npm install
+   $ npm start
