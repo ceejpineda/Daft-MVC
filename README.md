@@ -1,4 +1,4 @@
-# Daft MVC Framework
+# 🤖 Daft MVC Framework
 
 Daft is a lightweight MVC (Model-View-Controller) framework for small projects built using Node.js and Express. It provides a structured way to organize your code, separate concerns, and build scalable applications.
 
