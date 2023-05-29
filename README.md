@@ -21,7 +21,20 @@ Follow these steps to get started with Daft:
 1. **Installation**: Clone the Daft repository or use npm to install it as a dependency.
 
    ```shell
-   $ git clone https://github.com/yourusername/daft.git
-   $ cd daft
+   $ git clone https://github.com/ceejpineda/Daft-MVC.git
+   $ cd Daft-MVC
    $ npm install
-   $ npm start
+
+2. **Configuration**: Customize the configuration file `config.js` to suit your needs. Configure your database connection, environment settings, and any other required variables.
+
+3. **Define Routes**: Create your application routes in the `routes` directory. You can use the provided example routes as a reference.
+
+4. **Controllers**: Implement your controllers in the `controllers` directory. Add your application logic and handle requests from the routes.
+
+5. **Models**: Define your models in the `models` directory. Interact with the database, perform data validation, and handle data manipulation tasks.
+
+6. **Views**: Create your views using your templating engine EJS in the `views` directory. Render dynamic content and generate HTML responses.
+
+7. **Start the Server**: Run the following command to start the server.
+```shell
+$ npm start
