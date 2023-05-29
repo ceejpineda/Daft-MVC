@@ -39,3 +39,20 @@ Follow these steps to get started with Daft:
 
     ```shell
     $ npm start
+
+8. **Access your App**: Open your browser and navigate to http://localhost:3000 (DEFAULT PORT) to access your Daft application.
+
+## Contributing
+
+Contributions are welcome! If you find any bugs, have suggestions for improvements, or would like to add new features, please submit a pull request. Make sure to follow the existing coding style and include relevant tests.
+
+## Acknowledgments
+
+Express - Fast, unopinionated, minimalist web framework for Node.js.
+Node.js - A JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+## Contact
+
+For any questions or feedback, feel free to reach out:
+
+Email: pinedacj1020@gmail.com
